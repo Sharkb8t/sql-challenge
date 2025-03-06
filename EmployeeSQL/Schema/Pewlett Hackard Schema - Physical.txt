@@ -3,6 +3,7 @@
 employees
 -
 emp_no INT PK
+emp_title_id VARCHAR(10) FK >- titles.title_id
 birth_date DATE
 first_name VARCHAR(50)
 last_name VARCHAR(50)
@@ -37,7 +38,5 @@ to_date DATE
 
 titles
 -
-emp_no INT PK FK >- employees.emp_no
+title_id VARCHAR(10) PK
 title VARCHAR(50)
-from_date DATE
-to_date DATE
