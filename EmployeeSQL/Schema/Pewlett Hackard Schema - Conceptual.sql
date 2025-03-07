@@ -20,9 +20,17 @@ CREATE TABLE [employees] (
     )
 )
 
+CREATE TABLE [titles] (
+    [title_id] VARCHAR(10)  NOT NULL ,
+    [title] VARCHAR(50)  NOT NULL ,
+    CONSTRAINT [PK_titles] PRIMARY KEY CLUSTERED (
+        [title_id] ASC
+    )
+)
+
 CREATE TABLE [departments] (
     [dept_no] CHAR(4)  NOT NULL ,
-    [dept_name] VARCHAR(50)  NOT NULL ,
+    [dept_name] VARCHAR(40)  NOT NULL ,
     CONSTRAINT [PK_departments] PRIMARY KEY CLUSTERED (
         [dept_no] ASC
     ),
@@ -34,8 +42,6 @@ CREATE TABLE [departments] (
 CREATE TABLE [dept_emp] (
     [emp_no] INT  NOT NULL ,
     [dept_no] CHAR(4)  NOT NULL ,
-    [from_date] DATE  NOT NULL ,
-    [to_date] DATE  NOT NULL ,
     CONSTRAINT [PK_dept_emp] PRIMARY KEY CLUSTERED (
         [emp_no] ASC,[dept_no] ASC
     )
@@ -44,8 +50,6 @@ CREATE TABLE [dept_emp] (
 CREATE TABLE [dept_manager] (
     [dept_no] CHAR(4)  NOT NULL ,
     [emp_no] INT  NOT NULL ,
-    [from_date] DATE  NOT NULL ,
-    [to_date] DATE  NOT NULL ,
     CONSTRAINT [PK_dept_manager] PRIMARY KEY CLUSTERED (
         [dept_no] ASC,[emp_no] ASC
     )
@@ -54,18 +58,8 @@ CREATE TABLE [dept_manager] (
 CREATE TABLE [salaries] (
     [emp_no] INT  NOT NULL ,
     [salary] INT  NOT NULL ,
-    [from_date] DATE  NOT NULL ,
-    [to_date] DATE  NOT NULL ,
     CONSTRAINT [PK_salaries] PRIMARY KEY CLUSTERED (
         [emp_no] ASC
-    )
-)
-
-CREATE TABLE [titles] (
-    [title_id] VARCHAR(10)  NOT NULL ,
-    [title] VARCHAR(50)  NOT NULL ,
-    CONSTRAINT [PK_titles] PRIMARY KEY CLUSTERED (
-        [title_id] ASC
     )
 )
 
