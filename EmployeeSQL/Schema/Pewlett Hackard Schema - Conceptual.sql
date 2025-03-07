@@ -41,26 +41,17 @@ CREATE TABLE [departments] (
 
 CREATE TABLE [dept_emp] (
     [emp_no] INT  NOT NULL ,
-    [dept_no] CHAR(4)  NOT NULL ,
-    CONSTRAINT [PK_dept_emp] PRIMARY KEY CLUSTERED (
-        [emp_no] ASC,[dept_no] ASC
-    )
+    [dept_no] CHAR(4)  NOT NULL 
 )
 
 CREATE TABLE [dept_manager] (
     [dept_no] CHAR(4)  NOT NULL ,
-    [emp_no] INT  NOT NULL ,
-    CONSTRAINT [PK_dept_manager] PRIMARY KEY CLUSTERED (
-        [dept_no] ASC,[emp_no] ASC
-    )
+    [emp_no] INT  NOT NULL 
 )
 
 CREATE TABLE [salaries] (
     [emp_no] INT  NOT NULL ,
-    [salary] INT  NOT NULL ,
-    CONSTRAINT [PK_salaries] PRIMARY KEY CLUSTERED (
-        [emp_no] ASC
-    )
+    [salary] INT  NOT NULL 
 )
 
 ALTER TABLE [employees] WITH CHECK ADD CONSTRAINT [FK_employees_emp_title_id] FOREIGN KEY([emp_title_id])
