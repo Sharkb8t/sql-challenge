@@ -29,7 +29,7 @@ CREATE TABLE [titles] (
 )
 
 CREATE TABLE [departments] (
-    [dept_no] CHAR(4)  NOT NULL ,
+    [dept_no] VARCHAR(10)  NOT NULL ,
     [dept_name] VARCHAR(40)  NOT NULL ,
     CONSTRAINT [PK_departments] PRIMARY KEY CLUSTERED (
         [dept_no] ASC
@@ -41,11 +41,11 @@ CREATE TABLE [departments] (
 
 CREATE TABLE [dept_emp] (
     [emp_no] INT  NOT NULL ,
-    [dept_no] CHAR(4)  NOT NULL 
+    [dept_no] VARCHAR(10)  NOT NULL 
 )
 
 CREATE TABLE [dept_manager] (
-    [dept_no] CHAR(4)  NOT NULL ,
+    [dept_no] VARCHAR(10)  NOT NULL ,
     [emp_no] INT  NOT NULL 
 )
 
