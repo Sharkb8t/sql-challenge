@@ -17,17 +17,17 @@ title VARCHAR(50)
 
 departments
 -
-dept_no CHAR(4) PK
+dept_no VARCHAR(10) PK
 dept_name VARCHAR(40) UNIQUE
 
 dept_emp
 -
 emp_no INT FK >- employees.emp_no
-dept_no CHAR(4) FK >- departments.dept_no
+dept_no VARCHAR(10) FK >- departments.dept_no
 
 dept_manager
 -
-dept_no CHAR(4) FK >- departments.dept_no
+dept_no VARCHAR(10) FK >- departments.dept_no
 emp_no INT FK >- employees.emp_no
 
 salaries
